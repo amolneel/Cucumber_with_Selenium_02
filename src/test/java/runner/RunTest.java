@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
-		features="D:/Project/cucumber_with_selenium_01/Cucumber_with_Selenium_02/src/test/resources/features/HealthCheck.feature",
+		features="classpath:features",
 		glue = "stepdefs",
 		tags = "@Wip",
 		plugin = { "pretty", 
@@ -20,4 +20,4 @@ import io.cucumber.junit.CucumberOptions;
 		)
 public class RunTest {
 
-}
+}	
