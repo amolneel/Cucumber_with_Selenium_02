@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features="classpath:features",
 		glue = "stepdefs",
-		tags = "@Wip",
+		tags = "@Wip3",
 		plugin = { "pretty", 
 				"html:target/html/",
 				"json:target/json/file.json",
@@ -21,3 +21,7 @@ import io.cucumber.junit.CucumberOptions;
 public class RunTest {
 
 }	
+
+
+
+
