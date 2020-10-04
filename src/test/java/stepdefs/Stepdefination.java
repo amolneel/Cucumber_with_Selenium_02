@@ -1,7 +1,10 @@
 package stepdefs;
 
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -30,18 +33,19 @@ public class Stepdefination {
 		this.scn = scn;
 
 	}
-	
+
 	@After
 	public void QuiteAll() {
-		
-		/*TakesScreenshot scrnShot = (TakesScreenshot)driver;
+
+		TakesScreenshot scrnShot = (TakesScreenshot)driver;
 		byte[] data =scrnShot.getScreenshotAs(OutputType.BYTES);
-		
-		scn.attach(data, "image/png", "screenshot_01");
-		*/
+
+
+		//scn.attach(data, "image/png", "screenshot_01");
+
 		driver.quit();
 		scn.log("User quit the browser!...");		
-		
+
 	}
 
 
@@ -86,5 +90,34 @@ public class Stepdefination {
 		searchpageobjects.ValidateProductList(ProductName);
 	}
 
-	
+	@When("User click on any product")
+	public void user_click_on_any_product() 
+	{
+		searchpageobjects = new SearchPageObject(driver);
+		searchpageobjects.UserClickOnAnyProduct();
+
+	}
+	@Then("Product Description is displayed in new tab")
+	public void product_description_is_displayed_in_new_tab() 
+	{
+		String ExpectedPageTitle = "Amazon.in : Redmi note 9";
+		String ActualPageTitle = driver.getTitle();
+		System.out.println("the actual page title is"+ActualPageTitle);
+		Assert.assertTrue(ActualPageTitle.equalsIgnoreCase(ExpectedPageTitle));
+
+	}
+
+
+	@Then("User is click on Add to cart")
+	public void user_is_click_on_add_to_cart() 
+	{
+		searchpageobjects = new SearchPageObject(driver);
+		searchpageobjects.UserClickOnAddToCartBtn();
+	}
+
+
+
+
+
+
 }
