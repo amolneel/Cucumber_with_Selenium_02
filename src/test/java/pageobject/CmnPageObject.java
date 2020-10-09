@@ -6,18 +6,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.Scenario;
+
 public class CmnPageObject 
 {
 	WebDriver driver;
 	WebDriverWait wait;
+	Scenario scn;
+
 	
 	
 	private  By Search_text_box = By.xpath("//input[@id='twotabsearchtextbox']");
 	
 	private By Search_btn = By.xpath("//input[@value='Go']");
 	
-	public CmnPageObject(WebDriver driver)
+	public CmnPageObject(WebDriver driver,Scenario scn)
 	{
+		this.scn = scn;
 		this.driver = driver;
 	}
 	
