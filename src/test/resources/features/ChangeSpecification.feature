@@ -1,7 +1,7 @@
 @Wip5
-Feature: User is clicked on add to cart button 
+Feature: User chenge specification and then click on add to cart  
 
-Scenario: User is click on the Product and check the Product Details and click on add to cart
+Scenario: User is click on the Product and check the Product Details then user want to change specification and then after click on add to cart
     Given User opened Browser
     And User navigated to the home application url
     And User Search for product "Redmi Note 9"
